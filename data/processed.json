@@ -1,0 +1,67 @@
+{
+  "project": "HomeReady Planner",
+  "processed_at": "2026-05-11",
+  "model_contract": {
+    "required_user_inputs": [
+      "location",
+      "annualIncome",
+      "creditScore",
+      "savings",
+      "downPayment",
+      "monthlyDebt",
+      "homePrice",
+      "timeline",
+      "homeType",
+      "comfortPayment",
+      "interestRate",
+      "loanTermYears"
+    ],
+    "calculated_outputs": [
+      "principalInterest",
+      "propertyTax",
+      "insurance",
+      "pmi",
+      "totalHousingPayment",
+      "housingRatio",
+      "dtiRatio",
+      "downPaymentPct",
+      "remainingSavingsNeeded",
+      "monthsToGoal",
+      "affordableRangeLow",
+      "affordableRangeHigh",
+      "readiness"
+    ]
+  },
+  "starter_scenario": {
+    "location": "Newark, NJ",
+    "annual_income_usd": 78000,
+    "credit_score": 700,
+    "savings_usd": 42000,
+    "down_payment_usd": 35000,
+    "monthly_debt_usd": 520,
+    "target_home_price_usd": 335000,
+    "comfortable_monthly_payment_usd": 2400,
+    "interest_rate_pct": 6.75,
+    "loan_term_years": 30
+  },
+  "thresholds": {
+    "housing_ratio_target_pct": 28,
+    "dti_warning_pct": 43,
+    "down_payment_pmi_threshold_pct": 20,
+    "emergency_savings_months": 3
+  },
+  "formulas": {
+    "monthly_mortgage_payment": "principal * ((monthlyRate * (1 + monthlyRate) ^ payments) / (((1 + monthlyRate) ^ payments) - 1))",
+    "property_tax_monthly": "homePrice * (taxRate / 100) / 12",
+    "insurance_monthly": "homePrice * (insuranceRate / 100) / 12",
+    "pmi_monthly": "downPaymentPct < 20 ? principal * (pmiRate / 100) / 12 : 0",
+    "housing_ratio_pct": "totalHousingPayment / grossMonthlyIncome * 100",
+    "dti_ratio_pct": "(totalHousingPayment + monthlyDebt) / grossMonthlyIncome * 100",
+    "remaining_savings_needed": "max(requiredDownPayment + emergencyTarget - savings, 0)"
+  },
+  "interaction_outputs": {
+    "price_slider": "Recalculates monthly payment, housing ratio, DTI, down payment percent, and PMI for the selected house.",
+    "listing_matching": "Scores homes using payment safety, DTI, savings coverage, location fit, home type, and credit risk.",
+    "ai_assistant": "Explains DTI, PMI, readiness, plan strategy, and listing tradeoffs using the calculated values."
+  }
+}

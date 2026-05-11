@@ -1,0 +1,54 @@
+{
+  "project": "HomeReady Planner",
+  "retrieved": "2026-05-11",
+  "sources": [
+    {
+      "name": "Consumer Financial Protection Bureau housing affordability guidance",
+      "url": "https://www.consumerfinance.gov/consumer-tools/mortgages/",
+      "usage": "Definitions and consumer-facing mortgage planning context"
+    },
+    {
+      "name": "Fannie Mae debt-to-income underwriting guidance",
+      "url": "https://selling-guide.fanniemae.com/",
+      "usage": "DTI threshold context; app uses 43% as a warning line, not approval advice"
+    },
+    {
+      "name": "Mortgage affordability 28/36 rule of thumb",
+      "url": "https://www.investopedia.com/terms/t/twenty-eight-thirty-six-rule.asp",
+      "usage": "Housing ratio benchmark; app uses 28% as a target"
+    },
+    {
+      "name": "Project user inputs",
+      "url": "local questionnaire",
+      "usage": "Income, savings, debt, target price, desired location, credit score, and assumptions entered by the user"
+    }
+  ],
+  "raw_assumptions": {
+    "interest_rate_pct": 6.75,
+    "loan_term_years": 30,
+    "default_property_tax_rate_pct": 1.15,
+    "default_insurance_rate_pct": 0.38,
+    "pmi_rate_pct": 0.55,
+    "target_down_payment_pct": 20,
+    "max_housing_ratio_pct": 28,
+    "max_dti_ratio_pct": 43,
+    "emergency_months": 3,
+    "monthly_savings_capacity_pct": 10
+  },
+  "location_tax_defaults": {
+    "New Jersey": 2.05,
+    "Newark": 2.1,
+    "Jersey City": 1.75,
+    "New York": 1.45,
+    "Philadelphia": 1.35,
+    "default": 1.15
+  },
+  "listing_templates": [
+    { "type": "Condo", "name": "Starter Condo Near Transit", "beds": 1, "baths": 1, "price_factor": 0.72 },
+    { "type": "Townhome", "name": "Updated Townhome With Parking", "beds": 2, "baths": 1.5, "price_factor": 0.88 },
+    { "type": "Townhome", "name": "Move-In Ready Duplex Alternative", "beds": 3, "baths": 2, "price_factor": 1.02 },
+    { "type": "Single Family", "name": "Single Family Starter Home", "beds": 3, "baths": 2, "price_factor": 1.16 },
+    { "type": "Single Family", "name": "Renovated Neighborhood Home", "beds": 4, "baths": 2.5, "price_factor": 1.34 },
+    { "type": "Condo", "name": "Budget-Friendly Condo", "beds": 1, "baths": 1, "price_factor": 0.62 }
+  ]
+}
