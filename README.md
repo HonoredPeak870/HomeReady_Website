@@ -29,15 +29,21 @@ Home-buying readiness depends on more than the principal-and-interest mortgage p
 
 ## Data Story
 
-### Claim -> Evidence -> Interaction -> Takeaway
+### Context
 
-**Claim:** A buyer should not judge affordability by principal and interest alone.
+Buying a home is often presented as the next major milestone after college or early career stability, but first-time buyers can underestimate the real monthly cost. A house is not affordable just because the mortgage principal and interest fit the budget. Taxes, insurance, PMI, current debt, credit score, down payment, and emergency savings all affect whether buying is financially safe.
 
-**Evidence:** The app calculates monthly principal and interest, property tax, insurance, PMI, housing ratio, DTI, down payment percentage, remaining savings needed, and timeline.
+### Evidence
 
-**Interaction:** The selected-house price slider changes monthly payment, housing ratio, DTI, PMI, and down payment percentage in real time. This can change a house from comfortable to risky.
+The app uses the buyer's entered income, savings, debt, credit score, target price, location, timeline, and loan assumptions to calculate monthly principal and interest, estimated property tax, homeowner's insurance, PMI, total housing payment, housing ratio, DTI, savings gap, and months to goal. These values are compared against clear planning guardrails: a 28% housing ratio target, a 43% DTI warning line, and a 20% down payment threshold for avoiding PMI.
 
-**Takeaway:** A house is safer when the monthly payment stays near the buyer's comfort level, housing ratio stays near 28%, DTI stays near or below 43%, and the buyer still has emergency savings after the down payment.
+### Interaction
+
+The selected-house price slider is the main interaction. When the user moves the slider, the monthly payment, DTI, housing ratio, down payment percentage, and PMI update immediately. This can change the conclusion from comfortable to risky. A small increase in price may push DTI above the warning line, move housing cost beyond the safer target, or make PMI more likely.
+
+### Takeaway
+
+The safest home-buying plan is not always the largest loan a buyer can technically afford. A buyer is more ready when the monthly payment fits their comfort level, DTI stays near or below the warning line, savings remain after closing, and the selected house still fits their timeline. The app turns the home-buying question into a practical readiness decision instead of a simple mortgage estimate.
 
 ## Project Structure
 
@@ -98,7 +104,7 @@ npm run preview
 
 ## Deployment
 
-**Live URL:** Add your deployed Vercel, Netlify, or GitHub Pages link here.
+Live URL: https://homeready-eight.vercel.app/
 
 Recommended deployment settings:
 
